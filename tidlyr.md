@@ -80,7 +80,7 @@ ggplot(eustock, aes(x=time,y=DAX)) +
 ```
 
 ::: {.cell-output-display}
-![](tidlyr_files/figure-html/unnamed-chunk-3-1.png){width=672}
+![](tidlyr_files/figure-html/dax stocks-1.png){width=672}
 :::
 :::
 
@@ -95,7 +95,7 @@ ggplot(eustock, aes(x=time,y=DAX)) +
 ```
 
 ::: {.cell-output-display}
-![](tidlyr_files/figure-html/unnamed-chunk-4-1.png){width=672}
+![](tidlyr_files/figure-html/dax 2 lines-1.png){width=672}
 :::
 :::
 
@@ -122,7 +122,7 @@ ggplot(long_eustock, aes(x=time,y=Value, group=`Stock Index`, color=`Stock Index
 ```
 
 ::: {.cell-output-display}
-![](tidlyr_files/figure-html/unnamed-chunk-6-1.png){width=672}
+![](tidlyr_files/figure-html/stock graphs-1.png){width=672}
 :::
 :::
 
@@ -134,7 +134,7 @@ ggplot(long_eustock, aes(x=time,y=Value, color=`Stock Index`)) +
 ```
 
 ::: {.cell-output-display}
-![](tidlyr_files/figure-html/unnamed-chunk-7-1.png){width=672}
+![](tidlyr_files/figure-html/unnamed-chunk-4-1.png){width=672}
 :::
 :::
 

@@ -28,12 +28,12 @@ eustock <- eustock |> mutate(time=1:n())
 ```
 
 
-```{r}
+```{r dax stocks}
 ggplot(eustock, aes(x=time,y=DAX)) +
   geom_line()
 ```
 ### Wrong solution
-```{r}
+```{r dax 2 lines}
 ggplot(eustock, aes(x=time,y=DAX)) +
   geom_line() +
   geom_line(mapping= aes(y=CAC),color="red")
@@ -50,7 +50,7 @@ Problems:
 long_eustock <- eustock|> pivot_longer(-time, names_to = "Stock Index", values_to="Value")
 ```
 
-```{r}
+```{r stock graphs}
 ggplot(long_eustock, aes(x=time,y=Value, group=`Stock Index`, color=`Stock Index`)) +
   geom_line()
 ```
