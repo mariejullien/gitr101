@@ -1,0 +1,66 @@
+---
+title: "Tidlyr"
+author: "MarieJ"
+format: html
+editor: visual
+---
+
+## Tdlyr and ggplot2
+
+```{r}
+#| message:: false
+here::i_am("gitr101.Rproj")
+library(here)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+ not include the render in the git representory (ignore everything execpt the ignore fill and qmd file)
+ 
+### Multiple lines on a single graph
+ 
+```{r}
+eustock <- as.data.frame(EuStockMarkets)
+eustock <- eustock |> mutate(time=1:n())
+```
+
+
+```{r}
+ggplot(eustock, aes(x=time,y=DAX)) +
+  geom_line()
+```
+### Wrong solution
+```{r}
+ggplot(eustock, aes(x=time,y=DAX)) +
+  geom_line() +
+  geom_line(mapping= aes(y=CAC),color="red")
+
+```
+ 
+Problems: 
+- y axis name is wrong
+- colors must be specified manuallly
+-we miss an association between colors and names 
+
+### Tidlyr based solution 
+```{r}
+long_eustock <- eustock|> pivot_longer(-time, names_to = "Stock Index", values_to="Value")
+```
+
+```{r}
+ggplot(long_eustock, aes(x=time,y=Value, group=`Stock Index`, color=`Stock Index`)) +
+  geom_line()
+```
+```{r}
+ggplot(long_eustock, aes(x=time,y=Value, color=`Stock Index`)) +
+  geom_line()
+```
+=> same representation but may be harder for some calculation without the group 
+
+```{r}
+#| fig-height: 15
+ggplot(long_eustock, aes(x=time,y=Value)) +
+  geom_line() + 
+  facet_wrap(~`Stock Index`, ncol=1, scale="free_y")
+```
+
