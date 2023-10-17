@@ -2,8 +2,11 @@
 title: "Tidlyr"
 author: "MarieJ"
 format: html
-editor: visual
+execute: 
+  keep-md: true
+  
 ---
+execute: keep-md: create a md file 
 
 ## Tdlyr and ggplot2
 
