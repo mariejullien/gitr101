@@ -101,6 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>execute: keep-md: create a md file</p>
 <section id="tdlyr-and-ggplot2" class="level2">
 <h2 class="anchored" data-anchor-id="tdlyr-and-ggplot2">Tdlyr and ggplot2</h2>
 <div class="cell">
@@ -179,7 +180,15 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span><span class="st">`</span><span class="at">Stock Index</span><span class="st">`</span>, <span class="at">ncol=</span><span class="dv">1</span>, <span class="at">scale=</span><span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="tidlyr_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="tidlyr_files/figure-html/eurostocks%20facet-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long_eustock, <span class="fu">aes</span>(<span class="at">x=</span>time,<span class="at">y=</span>Value)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span><span class="st">`</span><span class="at">Stock Index</span><span class="st">`</span>, <span class="at">ncol=</span><span class="dv">1</span>, <span class="at">scale=</span><span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tidlyr_files/figure-html/eurostocks_facet-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>

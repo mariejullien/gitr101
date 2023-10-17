@@ -60,7 +60,13 @@ ggplot(long_eustock, aes(x=time,y=Value, color=`Stock Index`)) +
 ```
 => same representation but may be harder for some calculation without the group 
 
-```{r}
+```{r eurostocks facet}
+#| fig-height: 15
+ggplot(long_eustock, aes(x=time,y=Value)) +
+  geom_line() + 
+  facet_wrap(~`Stock Index`, ncol=1, scale="free_y")
+```
+```{r eurostocks_facet}
 #| fig-height: 15
 ggplot(long_eustock, aes(x=time,y=Value)) +
   geom_line() + 

@@ -8,6 +8,7 @@ execute:
 ---
 
 
+execute: keep-md: create a md file 
 
 ## Tdlyr and ggplot2
 
@@ -149,6 +150,19 @@ ggplot(long_eustock, aes(x=time,y=Value)) +
 ```
 
 ::: {.cell-output-display}
-![](tidlyr_files/figure-html/unnamed-chunk-8-1.png){width=672}
+![](tidlyr_files/figure-html/eurostocks facet-1.png){width=672}
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+ggplot(long_eustock, aes(x=time,y=Value)) +
+  geom_line() + 
+  facet_wrap(~`Stock Index`, ncol=1, scale="free_y")
+```
+
+::: {.cell-output-display}
+![](tidlyr_files/figure-html/eurostocks_facet-1.png){width=672}
 :::
 :::
